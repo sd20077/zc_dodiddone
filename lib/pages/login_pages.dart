@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme/theme.dart';
+import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -80,7 +81,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 40),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () {Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => const MainPage()));
                   // Обработка входа/регистрации
                 },
                 style: ElevatedButton.styleFrom(
@@ -96,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(isLogin ? 'Войти' : 'Зарегистрироваться'),
               ),
               const SizedBox(height: 20),
-              TextButton(
+              TextButton (
                 onPressed: () {
                   setState(() {
                     isLogin = !isLogin;

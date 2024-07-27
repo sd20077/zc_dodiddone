@@ -13,11 +13,17 @@ class DodiddoneTheme {
     // Добавляем стиль для кнопок
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        foregroundColor: const WidgetStatePropertyAll<Color>(Colors.white),
-        textStyle: WidgetStateProperty.all(
+        foregroundColor: const MaterialStatePropertyAll<Color>(Colors.white),
+        textStyle: MaterialStateProperty.all(
           const TextStyle(color: Colors.white), // Устанавливаем белый цвет текста
         ),
       ),
     ),
-  );
+         bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      
+      selectedItemColor: Color(0xFF9f7bf6), // Основной цвет для выбранных иконок
+      unselectedItemColor: Color(0xFF9f7bf6).withOpacity(0.5), // Цвет для невыбранных иконок
+    ),
+    );
 }
